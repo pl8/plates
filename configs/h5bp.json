@@ -1,0 +1,202 @@
+{
+
+  name: '{pl8.name} App',
+
+  inputs: [
+    'title',
+    'description',
+    'google analytics id',
+  ],
+
+  options: [
+    {
+      name: 'CSS',
+      vars: [
+        {
+          name: 'css-files',
+          content: `
+            <link rel="stylesheet" href="css/normalize.css">
+            <link rel="stylesheet" href="css/main.css">
+          `,
+        },
+      ],
+      files: [
+        {
+          name: 'normalize.css',
+          tpl: './h5bp/css/normalize.css',
+          path: './css/',
+        },
+        {
+          name: 'main.css',
+          tpl: './h5bp/css/main.css',
+          path: './css/',
+        },
+      ]
+    },
+
+    {
+      name: 'JS',
+      vars: [
+        {
+          name: 'js.scripts',
+          content: `
+            <script src="js/plugins.js"></script>
+            <script src="js/main.js"></script>
+          `,
+        },
+      ],
+      files: [
+        {
+          name: 'plugins.js',
+          tpl: './h5bp/plugins.js',
+          path: './js/',
+        },
+        {
+          name: 'main.js',
+          tpl: './h5bp/main.js',
+          path: './js/',
+        },
+      ],
+    },
+
+    {
+      name: 'Google Analytics',
+      vars: [
+        {
+          name: 'google-analytics',
+          tpl: './h5bp/google-analytics.html',
+        }
+      ]
+    },
+
+    {
+      name: 'jQuery',
+      vars: [
+        {
+          name: 'jquery.scripts',
+          content: `
+            <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+            <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.1.min.js"><\/script>')</script>
+          `,
+        },
+      ],
+    },
+
+    {
+      name: 'Modernizr',
+      vars: [
+        {
+          name: 'modernizr',
+          content: '<script src="js/vendor/modernizr-2.8.3.min.js"></script>',
+        },
+      ],
+    },
+
+    {
+      name: 'App Icons',
+      vars: [
+        {
+          name: 'apple-touch-icon',
+          content: '<link rel="apple-touch-icon" href="apple-touch-icon.png">',
+        },
+      ],
+      files: [
+        {
+          name: 'apple-touch-icon.png',
+          tpl: './h5bp/apple-touch-icon.png',
+          path: './img',
+        },
+        {
+          name: 'browserconfig.xml',
+          tpl: './h5bp/browserconfig.xml',
+        },
+        {
+          name: 'tile.png',
+          tpl: './h5bp/tile.png',
+          path: './img',
+        },
+        {
+          name: 'tile-wide.png',
+          tpl: './h5bp/tile-wide.png',
+          path: './img',
+        },
+      ],
+    },
+
+    {
+      name: '404',
+      files: [
+        {
+          name: '404.html',
+          tpl: './h5bp/404.html',
+        },
+      ]
+    },
+
+    {
+      name: 'Favicon',
+      vars: [
+        {
+          name: 'favicon',
+          content: '<link rel="shortcut icon" href="/favicon.ico">',
+        }
+      ],
+      files: [
+        {
+          name: 'favicon.ico',
+          tpl: './h5bp/favicon.ico',
+        },
+      ]
+    },
+
+    {
+      name: 'Crossdomain XML',
+      files: [
+        {
+          name: 'crossdomain.xml',
+          tpl: './h5bp/crossdomain.xml',
+        },
+      ]
+    },
+
+    {
+      name: 'Txt files',
+      files: [
+        {
+          name: 'LICENSE.txt',
+          tpl: './h5bp/LICENSE.txt',
+        },
+        {
+          name: 'humans.txt',
+          tpl: './h5bp/humans.txt',
+        },
+        {
+          name: 'robots.txt',
+          tpl: './h5bp/robots.txt',
+        },
+      ]
+    },
+
+    {
+      name: 'Browser upgrade',
+      vars: [
+        {
+          name: 'browser-upgrade',
+          tpl: './h5bp/browser-upgrade.html',
+        }
+      ]
+    },
+
+    {
+      name: 'H5BP Docs',
+      tpl: './h5bp/doc'
+    },
+
+  ],
+
+  file: {
+    name: 'index.html',
+    tpl: './h5bp/index.html',
+  },
+
+}
